@@ -15,3 +15,6 @@ our model.
 
 Contents Order
 (https://github.com/tyowusu/projects/branches)
+
+Paper
+https://hdl.handle.net/20.500.12608/46150
