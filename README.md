@@ -1,3 +1,5 @@
+Continual Learning on Gait Recognition
+
 In this thesis, an approach for gait recognition is presented using a set of smart glasses for gait
 data acquisition and deep learning as universal feature extractors. Our study aims to identify
 individuals based on their walking patterns using smart glasses’ accelerometer, gyroscope, and
