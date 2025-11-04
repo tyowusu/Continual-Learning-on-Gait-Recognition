@@ -1,0 +1,15 @@
+name: lux-glasses
+channels:
+dependencies:
+   - python=3.9
+   - pytorch::pytorch
+   - matplotlib
+   - numpy
+   - scikit-learn
+   - pandas
+   - pip
+   - seaborn
+   - scipy
+   - pip:
+     - tqdm
+     - bleak
