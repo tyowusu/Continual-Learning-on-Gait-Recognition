@@ -159,6 +159,13 @@ y = np.concatenate([
 ], axis=0).astype(np.int64)
 # write how you want to break you data [3,3,2], [3,5,0], etc
 BATCH_ORDER = [3,3,2]
+# per-person sample counts, in the same order X was concatenated above
+indices = [
+    len(data["walk_male#1"]), len(data["walk_male#2"]),
+    len(data["walk_male#3"]), len(data["walk_male#4"]),
+    len(data["walk_female#1"]), len(data["walk_female#2"]),
+    len(data["walk_female#3"]), len(data["walk_female#4"]),
+]
 subset = getSubset(X, y, indices,BATCH_ORDER)
 batch = 1
  
