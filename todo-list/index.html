@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List - Local Storage App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>My Todo List</h1>
+            <p class="subtitle">Organize your tasks efficiently</p>
+        </header>
+
+        <main>
+            <!-- Input Section -->
+            <div class="input-section">
+                <div class="input-group">
+                    <input 
+                        type="text" 
+                        id="todoInput" 
+                        class="todo-input" 
+                        placeholder="Add a new task..."
+                        autocomplete="off"
+                    >
+                    <select id="prioritySelect" class="priority-select">
+                        <option value="low">Low</option>
+                        <option value="medium" selected>Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                    <button id="addBtn" class="add-btn">Add Task</button>
+                </div>
+                <div class="quick-actions">
+                    <button id="filterBtn" class="filter-btn">
+                        <span class="filter-icon">⚙️</span> Filters
+                    </button>
+                    <button id="statsBtn" class="stats-btn">
+                        <span class="stats-icon">📊</span> Stats
+                    </button>
+                </div>
+            </div>
+
+            <!-- Filter Section (Hidden by default) -->
+            <div id="filterPanel" class="filter-panel hidden">
+                <div class="filter-content">
+                    <button class="filter-option active" data-filter="all">All Tasks</button>
+                    <button class="filter-option" data-filter="active">Active</button>
+                    <button class="filter-option" data-filter="completed">Completed</button>
+                    <button class="filter-option" data-filter="high">High Priority</button>
+                    <button class="filter-option" data-filter="medium">Medium Priority</button>
+                    <button class="filter-option" data-filter="low">Low Priority</button>
+                </div>
+            </div>
+
+            <!-- Stats Section (Hidden by default) -->
+            <div id="statsPanel" class="stats-panel hidden">
+                <div class="stats-content">
+                    <div class="stat-item">
+                        <span class="stat-label">Total Tasks:</span>
+                        <span id="totalTasks" class="stat-value">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Completed:</span>
+                        <span id="completedTasks" class="stat-value">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Remaining:</span>
+                        <span id="remainingTasks" class="stat-value">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Completion Rate:</span>
+                        <span id="completionRate" class="stat-value">0%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sort Section -->
+            <div class="sort-section">
+                <label for="sortSelect">Sort by:</label>
+                <select id="sortSelect" class="sort-select">
+                    <option value="date-desc">Newest First</option>
+                    <option value="date-asc">Oldest First</option>
+                    <option value="priority">Priority</option>
+                    <option value="alpha">Alphabetical</option>
+                </select>
+            </div>
+
+            <!-- Todo List -->
+            <div id="todoList" class="todo-list">
+                <div class="empty-state">
+                    <p class="empty-icon">📝</p>
+                    <p class="empty-message">No tasks yet. Add one to get started!</p>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button id="clearCompletedBtn" class="clear-btn">Clear Completed</button>
+                <button id="clearAllBtn" class="clear-all-btn">Clear All</button>
+                <button id="exportBtn" class="export-btn">Export</button>
+                <button id="importBtn" class="import-btn">Import</button>
+                <input type="file" id="fileInput" accept=".json" style="display: none;">
+            </div>
+        </main>
+
+        <footer>
+            <p>💾 Data saved automatically to local storage</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
